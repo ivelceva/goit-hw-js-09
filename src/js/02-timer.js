@@ -22,6 +22,7 @@ const timerMarkup = {
 };
 
 timerMarkup.button.disabled = true;
+let timeoutId = null;
 
 const options = {
   enableTime: true,
@@ -47,7 +48,7 @@ const calendar = flatpickr(timerMarkup.input, options);
 timerMarkup.button.addEventListener('click', onButtonClick);
 
 function onButtonClick() {
-  timeoutID = setInterval(() => {
+  timeoutId = setInterval(() => {
     updateTime();
   }, 1000);
   timerMarkup.input.disabled = true;
